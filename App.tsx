@@ -48,12 +48,12 @@ const MainNavigator = () => (
 );
 
 const AppNavigator = () => (
+
   <NavigationContainer>
-    <SkiaColor>
     <MainNavigator />
-    </SkiaColor>
 
   </NavigationContainer>
+
 );
 
 export default AppNavigator;
