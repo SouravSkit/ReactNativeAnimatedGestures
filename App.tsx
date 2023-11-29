@@ -9,20 +9,25 @@ import Task from './src/components/task';
 import Menu from './src/components/Menu';
 import DetailsScreen from './src/components/Details';
 import LoginScreen from './src/components/login';
+import SkiaColor from './src/components/skiaColor';
 
 const Stack = createStackNavigator();
 
 const StackNavigator = () => (
   <Stack.Navigator>
-    <Stack.Screen name="Task" component={Task} />
+    {/* <Stack.Screen name="Task" component={Task} /> */}
+    <Stack.Screen name="SkiaColor" component={SkiaColor} />
+
   </Stack.Navigator>
 );
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => (
   <Tab.Navigator>
-    <Tab.Screen name="Menu" component={Menu} />
-    <Tab.Screen name="Login" component={LoginScreen} />
+    {/* <Tab.Screen name="Menu" component={Menu} /> */}
+    {/* <Tab.Screen name="SkiaColor" component={SkiaColor} /> */}
+
+    <Tab.Screen name="Task" component={Task} />
   </Tab.Navigator>
 );
 
@@ -44,7 +49,10 @@ const MainNavigator = () => (
 
 const AppNavigator = () => (
   <NavigationContainer>
+    <SkiaColor>
     <MainNavigator />
+    </SkiaColor>
+
   </NavigationContainer>
 );
 

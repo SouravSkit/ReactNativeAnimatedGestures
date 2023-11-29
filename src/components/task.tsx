@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Modal,TextInput,Alert, Dimensions } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 
+
 const data = [
   { id: 1, text: 'Item 1', imageSource: require('../assets/tech2.jpg') },
   { id: 2, text: 'Item 2', imageSource: require('../assets/image11.jpg') },
@@ -19,7 +20,6 @@ const data = [
   { id: 16, text: 'Item 16', imageSource: require('../assets/image44.jpg') },
 
 ];
-
 const Task = () => {
 
   
