@@ -24,10 +24,8 @@ const StackNavigator = () => (
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => (
   <Tab.Navigator>
-    {/* <Tab.Screen name="Menu" component={Menu} /> */}
-    {/* <Tab.Screen name="SkiaColor" component={SkiaColor} /> */}
-
     <Tab.Screen name="Task" component={Task} />
+    <Tab.Screen name="login" component={LoginScreen} />
   </Tab.Navigator>
 );
 
