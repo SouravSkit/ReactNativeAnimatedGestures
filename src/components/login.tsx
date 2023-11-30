@@ -16,28 +16,26 @@ export default function LoginScreen({ navigation }) {
   const [password, onChangePassword] = useState('');
 
   return (
-    // <ScrollView style={styles.container}>
       <View style={styles.container} >
   <CubeNavigationHorizontal ref={view => { this.cube = view; }}>
+
+  <Pressable
+        onPress={() => navigation.navigate('Task')}>
     <View style={[styles.container, { backgroundColor: '#5CDB8B' }]}>
       <Text style={styles.text}>Horizontal Page 1</Text>
     </View>
+    </Pressable>
+
     <View style={[styles.container, { backgroundColor: '#A3F989' }]}>
       <Text style={styles.text}>Horizontal Page 2</Text>
     </View>
     <View style={[styles.container, { backgroundColor: '#CBF941' }]}>
       <Text style={styles.text}>Horizontal Page 3</Text>
     </View>
+
   </CubeNavigationHorizontal>
-    {/* <Pressable
-        onPress={() => navigation.navigate('Welcome')}
-        style={styles.button}>
-        <Text style={styles.buttonText}>Log in</Text>
-      </Pressable> */}
       </View>
-    
-    // </ScrollView>
-  );
+      );
 }
 
 const styles = StyleSheet.create({
