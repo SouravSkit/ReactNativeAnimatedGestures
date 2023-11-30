@@ -5,6 +5,10 @@ import { Skia, Canvas, Path, Shader } from '@shopify/react-native-skia';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const source = Skia.RuntimeEffect.Make(`
   vec3 color1 = vec3(0.635, 0.58, 0.89);
   vec3 color2 = vec3(0.58, 0.89, 0.882);
@@ -83,9 +87,10 @@ const Task = () => {
     </TouchableOpacity>
   );
   return (
+    <>
     <View style={styles.container}>
-
-      <View style={styles.overlay}>
+  
+      <View>
       </View>
       <Canvas style={ styles.canvasStyle}>
         <Path path="M 0 0 L 1048 0 L 1048 583 L 0 583 Z">
@@ -115,9 +120,25 @@ const Task = () => {
           disableTopSwipe
           disableBottomSwipe
         />
- </View>
-
+     </View>
     </View>
+        <View style={{flex:0.15,backgroundColor: '#94e3e0',marginBottom:2}}>
+        <View style={{flexDirection:'row',justifyContent:'space-between',marginHorizontal:10}}>
+            <Text>All Editions</Text> 
+          <Image source={require('../assets/filter2.png')} style={{width:20,height:20}}/>
+          </View>
+        <FlatList
+        data={data}
+        keyExtractor={(item) => item.id.toString()}
+        horizontal={true} 
+
+        renderItem={({ item }) => (
+          <Image source={item.imageSource} style={styles.flatListItem} />
+
+        )}
+      />
+</View>
+</>
   );
 };
 
@@ -126,7 +147,7 @@ const styles = StyleSheet.create({
     
     backgroundColor: '#94e3e0',
 
-    flex:1,
+    flex:0.85,
   },
 
   card: {
@@ -160,14 +181,16 @@ const styles = StyleSheet.create({
     width:70,
     height:20
   },
-  overlay: {
-    // ...StyleSheet.absoluteFillObject,
-        // backgroundColor: 'transparent',
 
-  },
   canvasStyle:{
 
   ...StyleSheet.absoluteFillObject
+  },
+  flatListItem:{
+    height:windowWidth*0.28,
+    width:windowWidth*0.28,
+    marginHorizontal: 10, 
+
   }
 });
 
