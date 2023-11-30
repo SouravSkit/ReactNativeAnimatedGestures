@@ -7,20 +7,39 @@ import { NavigationContainer } from '@react-navigation/native';
 import Task from './src/components/task';
 import LoginScreen from './src/components/login';
 import SkiaColor from './src/components/skiaColor';
+import { Image } from 'react-native';
+
+
+const YourComponent = () => {
+  return (
+    <Image
+      source={require('./src/assets/vice.png')}
+      style={{ width: 100, height: 100 }} // Adjust dimensions as needed
+    />
+  );
+};
+
 
 const Stack = createStackNavigator();
 
 const StackNavigator = () => (
+
   <Stack.Navigator>
-    <Stack.Screen name="login" component={LoginScreen} />
-  </Stack.Navigator>
+      <Stack.Screen name="Task" component={Task} options={{ headerShown: false}}  />
+
+          <Stack.Screen name="login" component={LoginScreen} options={{ headerShown: false}}  />
+
+   </Stack.Navigator>
+
 );
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => (
   <Tab.Navigator>
-    <Tab.Screen name="Task" component={Task} />
-    <Tab.Screen name="login" component={LoginScreen} />
+    <Tab.Screen name="Task" component={Task}  options={{ headerShown: false}}
+  
+    />
+    <Tab.Screen name="login" component={LoginScreen} options={{ headerShown: false}}/>
   </Tab.Navigator>
 );
 
@@ -34,8 +53,8 @@ const DrawerNavigator = () => (
 
 const MainNavigator = () => (
   <Drawer.Navigator initialRouteName="Home">
-    <Drawer.Screen name="Home" component={TabNavigator} />
-    <Drawer.Screen name="Login" component={StackNavigator} />
+    <Drawer.Screen name="Home" component={TabNavigator} options={{ headerShown: false}} />
+    <Drawer.Screen name="Login" component={StackNavigator} options={{ headerShown: false}}/>
   </Drawer.Navigator>
 );
 

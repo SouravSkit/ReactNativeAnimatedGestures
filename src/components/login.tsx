@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   father: {
-    flex:0.8,
     margin: 12,
     borderWidth: 1,
     padding: 10,
