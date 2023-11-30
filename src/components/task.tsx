@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, Modal,TextInput,Alert, Dimensions } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import { Skia, Canvas, Path, Shader } from '@shopify/react-native-skia';
+import { useNavigation } from '@react-navigation/native';
+
 
 const source = Skia.RuntimeEffect.Make(`
   vec3 color1 = vec3(0.635, 0.58, 0.89);
@@ -35,17 +37,23 @@ const data = [
 ];
 const Task = () => {
 
-  
-
   const[index,setIndex]= useState(0);
   const onSwiped =()=>{
     setIndex(index+1)
   }
 
+  const navigation = useNavigation();
+
+  const onCardPress = () => {
+    navigation.navigate('login'); 
+  };
+
   const Card = ({card})=>(
-    <View style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={onCardPress}>
+      <View>
       <Image source = {card.imageSource} style={styles.cardImage}/>
-    </View>
+      </View>
+      </TouchableOpacity>
   )
 
   return (

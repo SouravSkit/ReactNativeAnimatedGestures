@@ -5,38 +5,37 @@ import {
   StyleSheet,
   TextInput,
   Pressable,
+  View,
 } from 'react-native';
+
+import { CubeNavigationHorizontal } from 'react-native-3dcube-navigation'
+
 
 export default function LoginScreen({ navigation }) {
   const [email, onChangeEmail] = useState('');
   const [password, onChangePassword] = useState('');
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.headerText}>Welcome to Little Lemon</Text>
-      <Text style={styles.regularText}>Login to continue </Text>
-      <TextInput
-        style={styles.inputBox}
-        value={email}
-        onChangeText={onChangeEmail}
-        placeholder={'email'}
-        keyboardType={'email-address'}
-      />
-      <TextInput
-        style={styles.inputBox}
-        value={password}
-        onChangeText={onChangePassword}
-        placeholder={'password'}
-        keyboardType={'default'}
-        secureTextEntry={true}
-      />
-      <Pressable
-        onPress={() => navigation.navigate('Welcome')}
-        style={styles.button}>
-        <Text style={styles.buttonText}>Log in</Text>
-      </Pressable>
-    </ScrollView>
-  );
+      <View style={styles.container} >
+  <CubeNavigationHorizontal ref={view => { this.cube = view; }}>
+
+  <Pressable
+        onPress={() => navigation.navigate('Task')}>
+    <View style={[styles.container, { backgroundColor: '#5CDB8B' }]}>
+      <Text style={styles.text}>Horizontal Page 1</Text>
+    </View>
+    </Pressable>
+
+    <View style={[styles.container, { backgroundColor: '#A3F989' }]}>
+      <Text style={styles.text}>Horizontal Page 2</Text>
+    </View>
+    <View style={[styles.container, { backgroundColor: '#CBF941' }]}>
+      <Text style={styles.text}>Horizontal Page 3</Text>
+    </View>
+
+  </CubeNavigationHorizontal>
+      </View>
+      );
 }
 
 const styles = StyleSheet.create({
@@ -57,8 +56,8 @@ const styles = StyleSheet.create({
     color: '#EDEFEE',
     textAlign: 'center',
   },
-  inputBox: {
-    height: 40,
+  father: {
+    flex:0.8,
     margin: 12,
     borderWidth: 1,
     padding: 10,
