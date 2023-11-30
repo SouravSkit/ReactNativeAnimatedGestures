@@ -120,6 +120,7 @@ const Task = () => {
           disableTopSwipe
           disableBottomSwipe
         />
+        <Text style={{fontWeight:'bold',color:'white',justifyContent:'center',textAlign:'center',backgroundColor:'#A294E4'}}>THE ARCHIVE</Text>
      </View>
     </View>
         <View style={{flex:0.15,backgroundColor: '#94e3e0',marginBottom:2}}>

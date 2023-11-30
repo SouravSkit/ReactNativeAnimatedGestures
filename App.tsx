@@ -57,7 +57,7 @@ const TabNavigator = () => (
     />
 
 <Tab.Screen
-      name="Settings"
+      name="login"
       component={LoginScreen}
       options={{
         headerShown: false,
