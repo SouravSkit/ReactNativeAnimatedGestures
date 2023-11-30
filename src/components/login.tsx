@@ -23,7 +23,7 @@ export default function LoginScreen({ navigation }) {
 
   <Pressable onPress={() => navigation.navigate('Task')}>
       <ImageBackground
-        source={require('../assets/image55.jpg')}
+        source={require('../assets/image99.jpg')}
         style={styles.container}
       >
       </ImageBackground>
@@ -51,8 +51,10 @@ export default function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
+    width: '100%',
+    height: '100%',
     flex: 1,
-    backgroundColor: '#333333',
+    resizeMode: 'cover',
   },
   headerText: {
     padding: 40,
