@@ -6,6 +6,8 @@ import {
   TextInput,
   Pressable,
   View,
+  Image,
+  ImageBackground
 } from 'react-native';
 
 import { CubeNavigationHorizontal } from 'react-native-3dcube-navigation'
@@ -19,19 +21,28 @@ export default function LoginScreen({ navigation }) {
       <View style={styles.container} >
   <CubeNavigationHorizontal ref={view => { this.cube = view; }}>
 
-  <Pressable
-        onPress={() => navigation.navigate('Task')}>
-    <View style={[styles.container, { backgroundColor: '#5CDB8B' }]}>
-      <Text style={styles.text}>Horizontal Page 1</Text>
-    </View>
+  <Pressable onPress={() => navigation.navigate('Task')}>
+      <ImageBackground
+        source={require('../assets/image99.jpg')}
+        style={styles.container}
+      >
+      </ImageBackground>
     </Pressable>
 
-    <View style={[styles.container, { backgroundColor: '#A3F989' }]}>
-      <Text style={styles.text}>Horizontal Page 2</Text>
-    </View>
-    <View style={[styles.container, { backgroundColor: '#CBF941' }]}>
-      <Text style={styles.text}>Horizontal Page 3</Text>
-    </View>
+    <Pressable onPress={() => navigation.navigate('Task')}>
+      <ImageBackground
+        source={require('../assets/image66.jpg')}
+        style={styles.container}
+      >
+      </ImageBackground>
+    </Pressable>
+
+    <Pressable onPress={() => navigation.navigate('Task')}>
+      <ImageBackground
+        source={require('../assets/image88.jpg')}
+        style={styles.container}>
+      </ImageBackground>
+    </Pressable>
 
   </CubeNavigationHorizontal>
       </View>
@@ -40,8 +51,10 @@ export default function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
+    width: '100%',
+    height: '100%',
     flex: 1,
-    backgroundColor: '#333333',
+    resizeMode: 'cover',
   },
   headerText: {
     padding: 40,
