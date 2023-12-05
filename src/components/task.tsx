@@ -49,6 +49,8 @@ const data = [
   { id: 1, text: 'Item 1', imageSource: require('../assets/tech2.jpg') },
   { id: 2, text: 'Item 2', imageSource: require('../assets/image11.jpg') },
   { id: 3, text: 'Item 3', imageSource: require('../assets/image22.jpg') },
+  { id: 4, text: 'Item 4', imageSource: require('../assets/image33.jpg') },
+  
 ];
 
 const Task = () => {
@@ -148,7 +150,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     borderWidth: 2,
     width: windowWidth - 50,
-    height: windowWidth - 305,
+    height: windowWidth - 355,
     alignSelf: 'center',
     padding: 20,
     marginTop: 30,
